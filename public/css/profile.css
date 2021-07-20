@@ -1,0 +1,141 @@
+.ct{
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.ct0{
+    display: flex;
+    margin-left: 12%;
+}
+
+.item{
+    width: 200px;
+    margin-top: 125px;
+}
+
+.item p{
+    font-weight: bold;
+    margin: 20px 0 0 20px;
+    font-size: 18px;
+    font-family: Impact;
+    color: #695454;
+}
+
+.item p:hover{
+    color: #17a38e;
+    border-left: 2px solid #17a38e;
+}
+
+/*編輯檔案區塊*/
+
+.ct1{
+    width: 700px;
+    height: 1120px;
+    margin-top: 125px;
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+}
+
+.t_ct1{
+    font-size: 20px;
+    font-family: Impact;
+    font-weight: bold;
+    margin: 55px 0 -30px 30px;
+}
+
+#uppic{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.upcls{
+    border: 2px solid;
+    border-color: #5d16164d;;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-left: 30px
+}
+
+.lbl{
+    display: block;
+    color: #695454;
+    background-color: #9090901f;
+    font-size: 20px;
+    border-radius: 13%;
+    margin-left: 8px;
+    width: 125px;
+    text-align: center;
+    padding: 12px;
+    position: absolute;
+    top: 330px;
+    left: 870px;
+}
+
+.fm{
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+.fm input, .fm textarea, .fm select{
+    margin-top: 30px;
+    width: 500px;
+    height: 55px;
+    border-color: #8080803b;
+}
+
+input[type=text]:focus , textarea:focus , select:focus {
+    border:5px solid;
+    border-color: rgb(233, 190, 173);
+  }
+
+input[type=submit]{
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-family: monospace;
+    color: #ce8978;
+    background-color: #9090901f;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/*更改密碼區塊*/
+.ct2{
+    width: 700px;
+    height: 500px;
+    margin-top: 125px;
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+    display: none;
+}
+
+.title{
+    font-family: Impact;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 25px 0 -30px 30px;
+}
+
+.input input{
+    margin-top: 50px;
+    margin-left: 30px;
+    width: 500px;
+    height: 55px;
+    border-color: #8080803b;
+}
+
+input[type=password]:focus {
+    border:5px solid;
+    border-color: rgb(233, 190, 173);
+  }
+
+.btnsee{
+    margin: 35px 0 0px 80%;
+}
+
+.ct button:hover{
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+}

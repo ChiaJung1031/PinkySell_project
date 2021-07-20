@@ -1,0 +1,252 @@
+<style>
+
+</style>
+    
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charest="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/template.css" />
+    <link rel="stylesheet" type="text/css" href="/css/uploadpic.css" />
+    <title>旋轉拍賣</title>
+ 	<!-- indexJS -->
+     <script src="/js/template.js"></script>
+     <script src="/js/uploadpic.js"></script>
+    </head>
+    <body>
+        <div class="hd">
+            <div class="hd0">
+                <div class="hd1">
+                    <img class="headimg" src="/image/camera.png" onclick="index()">
+                    <div class="menu">流行時尚</div>
+                    <div class="menu">美妝保養</div>
+                    <div class="menu">電子3C</div>
+                    <div class="menu">運動休閒</div>
+                </div>
+                <div>
+                    <div class="hd2_1">
+                        <div id="signup" class="menu" onclick="signup()">註冊</div>
+                        <div id="signin" class="menu" onclick="login()">登入</div>
+                    </div>
+                    <div  class="hd2_2">
+                        <div class="up"><img id="selfpic"></div>
+                        <div id="userid" class="menu" onclick="gotoself()"></div>
+                        <div id="logout" class="menu" onclick="logout()">登出</div>
+                    </div>
+                </div>
+            </div>
+         </div>
+         <div class="srall">
+            <div class="sr">
+                <div class="sr1">
+                    <div class="goindex" onclick="goindex()">
+                        <img class="headimg_1" src="/image/cameraR.png"> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="logo">PinkySell</div>
+                    </div>
+                    <div class="sr_txt"><input type="text" id="t_search" placeholder="搜尋商品或用戶"></div>
+                    <img class="sr_pic" src="/image/search.png"> 
+                </div>
+                <div class="sr2">
+                    <button id="b_sale" onclick="gosell()">出售</button>
+                </div> 
+            </div>
+        </div>
+        <div id="selltitle" onclick="gopersonal()">X 你今天想賣出什麼呢?</div>
+        <div class="cnt">
+            <div class="upload">
+                <div class="upct">
+                    <div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>                 
+                        <label class="lbl">
+                            <input type="file" name="file" id="file" style="display:none" accept=".png, .jpg, .jpeg" onchange="uploadpic()"  required=>
+                            選擇照片
+                        </label>
+                        <br>  
+                        <br>  
+                        <label class="re">(Up to 6 Photos)</label>
+                    </div>
+                </div>
+                <br>  
+                <br> 
+                <br> 
+                <div id="show" class="show"> 
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="info">
+                    <form id="sellfrom">
+                        <div class="t_info">商品類別&名稱</div>
+                        <select name="selects" id="infos" required="true">
+                            <option value="" selected>請選擇類別</option>
+                            <optgroup label="她的時尚">
+                            <option value="g0">包包</option>
+                            <option value="g1">衣褲</option>
+                            <option value="g2">鞋子</option>
+                            <option value="g3">外套</option>
+                            </optgroup>
+                            <optgroup label="他的時尚">
+                            <option value="b0">包包</option>
+                            <option value="b1">衣褲</option>
+                            <option value="b2">鞋子</option>
+                            <option value="b3">外套</option>
+                            </optgroup>
+                            <optgroup label="美妝保養">
+                                <option value="mk0">化妝品</option>
+                                <option value="mk1">美髮</option>
+                                <option value="mk2">香水</option>
+                                <option value="mk3">保養品</option>
+                            </optgroup>
+                            <optgroup label="電子3C">
+                                <option value="3c0">桌電筆電</option>
+                                <option value="3c1">手機平板</option>
+                                <option value="3c2">其他產品</option>
+                            </optgroup>
+                            <optgroup label="票券">
+                                <option value="tk1">禮券</option>
+                                <option value="tk2">餐券</option>
+                                <option value="tk3">門票</option>
+                            </optgroup>
+                            <optgroup label="食物">
+                                <option value="fo1">泡麵</option>
+                                <option value="fo2">餅乾</option>
+                                <option value="fo3">飲料</option>
+                            </optgroup>
+                            <optgroup label="家庭電器">
+                                <option value="ht1">電視</option>
+                                <option value="ht2">廚房家電</option>
+                                <option value="ht3">生活家電</option>
+                                <option value="ht4">美容家電</option>
+                            </optgroup>
+                            <optgroup label="名牌精品">
+                                <option value="bq1">精品包包</option>
+                                <option value="bq2">精品衣服</option>
+                                <option value="bw3">精品配件</option>
+                            </optgroup>
+                            <optgroup label="運動休閒">
+                                <option value="ft1">運動服飾</option>
+                                <option value="ft2">健身器材</option>
+                                <option value="ft3">戶外休閒</option>
+                            </optgroup>
+                            <optgroup label="玩具">
+                                <option value="ty">玩具</option>
+                            </optgroup>
+                            <optgroup label="寵物用品">
+                                <option value="an">寵物用品</option>
+                            </optgroup>
+                            <optgroup label="書籍">
+                                <option value="bo">書籍</option>
+                            </optgroup>
+                        </select>
+                        <input type="text" id="proname" placeholder="商品名稱"  maxlength="20" required>  
+                        <input type="text" id="brand" placeholder="品牌"  maxlength="20">
+                        <div class="t_info">關於此商品</div>
+                        <div class="st_info">新舊程度</div>
+                            <div class="rbt">
+                                <div>
+                                    <input type="radio" id="new" name="p_status" value="n1">
+                                    <label for="new">全新</label>
+                                </div>
+                            </div>
+                            <div class="rbt">
+                                <input type="radio" id="almostnew" name="p_status" value="n2">
+                                <label for="almostnew">幾乎全新</label>
+                            </div>
+                            <div class="rbt">
+                                <input type="radio" id="good" name="p_status" value="n3">
+                                <label for="good">狀況良好</label>
+                            </div>
+                            <div class="rbt">
+                                <input type="radio" id="soso" name="p_status" value="n4">
+                                <label for="soso">狀況尚可</label>
+                            </div>
+                        
+                        <div class="st_info">價格</div>
+                            <input type="text" id="price" placeholder="NT$ 價格" required onkeyup="if(event.keyCode !=37 && event.keyCode != 39)value=value.replace(/\D/g,'')">
+                        <div class="st_info">商品敘述</div>
+                            <textarea id="describe" placeholder="請描述您所銷售的產品，包含買家可能感興趣的任何細節，用戶們喜歡有故事的產品！(上限100字)"  required  maxlength="100"></textarea>
+                        <div class="st_info">數量</div>
+                            <input type="text" id="quantity" placeholder="請輸入數量" maxlength="3" onkeyup="if(event.keyCode !=37 && event.keyCode != 39)value=value.replace(/\D/g,'')" required>
+                        <div class="st_info">商品關鍵字</div>
+                            <input type="text" id="keyword1" maxlength="10" placeholder="請輸入關鍵字，字數10以內">
+                            <input type="text" id="keyword2" maxlength="10" placeholder="請輸入關鍵字，字數10以內">
+                            <input type="text" id="keyword3" maxlength="10" placeholder="請輸入關鍵字，字數10以內">
+                        <div class="t_info">交易方式</div>
+                            <div class="checkbox">  
+                                <input type="checkbox" id="trans_1" name="vehicle" value="t1" onchange="clk1()">
+                                <label for="trans_1"> 7-Eleven 取貨付款</label><br>
+                            </div>
+                            <br>
+                            <textarea id="t_des1" style="display: none;" placeholder="請填寫相關取貨付款資訊！"></textarea>
+                            <div  class="checkbox">  
+                                <input type="checkbox" id="trans_2" name="vehicle" value="t2" onchange="clk2()">
+                                <label for="trans_2"> 郵寄及宅配</label><br>
+                            </div>
+                            <br>
+                            <textarea id="t_des2" style="display: none;" placeholder="是否有額外郵寄費用或選擇?"></textarea>
+                            <div  class="checkbox">  
+                                <input type="checkbox" id="trans_3" name="vehicle" value="t3" onchange="clk3()">
+                                <label for="trans_3"> 面交</label>
+                            </div>
+                            <br>
+                            <textarea id="t_des3" style="display: none;height: 65px;" placeholder="請填寫面交地點！"></textarea>
+                            <br>
+                            <div class="btnsave">
+                                <input type="submit" id="save2" value="save">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+
+        <br>
+        <br>
+       
+       <div class="footer">
+              COPYRIGHT © 2021 PinckySell
+       </div>
+
+       
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal signin content -->
+            <div id="signin_content" class="signin_content">
+                <div style="display:flex;">
+                    <p class="cls_signin">登入會員帳號</p>
+                    <img class="close"  id="close" src="/image/icon_close.png" >
+                </div>
+                <input type="text" id="id_account" placeholder="輸入使用者名稱"><br><br>
+                <input type="password"  id="id_pwd" placeholder="輸入密碼"><br><br>
+                <button onclick="btn_signin()"  onkeypress="myFunction()">登入帳戶</button><br>
+                <label id="errmsg_login" class="error_msg"></label>
+                <p id="nosignin" onclick="signup()">還沒有帳戶？點此註冊</p>
+            </div>
+            <!-- Modal signup content -->   
+            <div id="signup_content" class="signup_content">
+                <div style="display:flex;">
+                    <p class="cls_signin">註冊會員帳號</p>
+                    <img class="close" id="signupclose" src="/image/icon_close.png" >
+                </div>
+                <input type="text" id="sign_account" placeholder="輸入使用者名稱"  required><br><br>
+                <input type="text" id="sign_name" placeholder="輸入姓名"  required><br><br>
+                <input type="text" id="sign_email" placeholder="輸入電子信箱"  required><br><br>
+                <input type="password" id="sign_pwd" placeholder="輸入密碼"  required><br><br>
+                <button onclick="btn_signup()">註冊新帳戶</button><br>
+                <label id="errmsg" class="error_msg"></label>
+                <p id="nosignup" onclick="haveAccount()">已經有帳戶了？點此登入</p>
+            </div>
+        </div>
+
+    </body>
+    
+    
+</html>

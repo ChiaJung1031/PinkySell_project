@@ -1,0 +1,206 @@
+<style>
+
+</style>
+    
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charest="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/template.css" />
+    <link rel="stylesheet" type="text/css" href="/css/product.css" />
+    <title>旋轉拍賣</title>
+ 	<!-- indexJS -->
+     <script src="/js/template.js"></script>
+     <script src="/js/product.js"></script>
+    </head>
+    <body>
+        <div class="hd">
+            <div class="hd0">
+                <div class="hd1">
+                    <img class="headimg" src="/image/camera.png" onclick="index()">
+                    <div class="menu">流行時尚</div>
+                    <div class="menu">美妝保養</div>
+                    <div class="menu">電子3C</div>
+                    <div class="menu">運動休閒</div>
+                </div>
+                <div>
+                    <div class="hd2_1">
+                        <div id="signup" class="menu" onclick="signup()">註冊</div>
+                        <div id="signin" class="menu" onclick="login()">登入</div>
+                    </div>
+                    <div  class="hd2_2">
+                        <div class="up"><img id="selfpic"></div>
+                        <div id="userid" class="menu" onclick="gotoself()"></div>
+                        <div id="logout" class="menu" onclick="logout()">登出</div>
+                    </div>
+          
+                </div>
+            </div>
+         </div>
+         <div class="srall">
+            <div class="sr">
+                <div class="sr1">
+                    <div class="goindex" onclick="goindex()">
+                        <img class="headimg_1" src="/image/cameraR.png"> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="logo">PinkySell</div>
+                    </div>
+                    <div class="sr_txt"><input type="text" id="t_search" placeholder="搜尋商品或用戶"></div>
+                    <img class="sr_pic" src="/image/search.png"> 
+                </div>
+                <div class="sr2">
+                    <button id="b_sale" onclick="gosell()">出售</button>
+                </div> 
+            </div>
+        </div>
+       
+      <div class="ctall">
+          <div class="pro">
+              <div class="allpic">
+                <div id="container">
+                    <div id="list" style="left:-600px;">
+                    </div>
+                    <a href="javascript:;" id="prev" class="arrow" style="text-decoration:none;">&lt;</a>
+                    <a href="javascript:;" id="next"  class="arrow" style="text-decoration:none;">&gt;</a>
+				</div>
+              </div>
+              <br>
+              <div class="proinfo">
+                    <div class="status">
+                        <img src="/image/status.png">
+                        <p id="prostatus"></p>
+                    </div>
+                    <div id="proname"></div>
+                    <div id="price"></div>
+                    <div class="pronew">
+                        <div style="display: flex;margin-right: 105px;">
+                            <img src="/image/square.png"> &nbsp;
+                            <p id="newold"></p>
+                        </div>
+                        <div style="display: flex; margin-left: 53px;">
+                            <img src="/image/location.png"> &nbsp;
+                            <p id="city"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="pronew">
+                        <div class="pronew1" style="margin-right: 137px;">
+                            <img src="/image/count.png"> &nbsp;
+                            <p id="count"></p>
+                        </div>
+                        <div class="pronew1" style="margin-left: 28px;">
+                            <img src="/image/transation.png"> &nbsp;
+                            <p id="transation"></p>
+                        </div>
+                    </div>
+                    <hr id="hr" size="1px" style="margin-top: 20px;width: 792px;">
+                    <div>
+                        <p id="datetime" style="margin-left: 25px; font-size: 20px;"></p>
+                    </div>
+                    <br>
+                    <div style="display: flex;margin-bottom: 20px">
+                        <div class="titlename">品牌：</div><div id="brand"  class="content_1 fontlocate"></div>
+                    </div>
+                    <br>
+                    <div id="content" style="display: flex;margin-bottom: 20px">
+                        <div class="titlename">商品介紹：</div>
+                        <div id="des"  class="content_1">
+                        </div>
+                    </div>
+                    <br>
+                    <div style="display: flex;margin-bottom: 20px">
+                        <div class="titlename">運輸：</div><div class="content_1 fontlocate" id="trandes"></div>
+                    </div>
+              </div>
+          </div>
+
+           <!-- 買家看到的畫面 -->
+          <div class="buy" id="c_buy" style="display: none;">
+            <div>
+                <div style="display: flex; margin-bottom: -12px;"><img src="/image/diaolog.png"><p>私訊賣家</p></div>
+                <div class="eid">
+                    <div><img class="u_pic" id="upic1"> </div>
+                    <a class="account"  id="acc1" ></a>
+                </div>
+                <textarea id="selltxt" placeholder="留訊息給賣家"></textarea>
+            </div>
+            <button>發送訊息給賣家</button>
+           
+          </div>
+
+          <!-- 賣家看到的畫面 -->
+          <div class="sell" id="c_sell">
+            <div>
+                <div class="eid">
+                    <div><img class="u_pic"  id="upic2"> </div>
+                    <div class="account" id="acc2"></div>
+                </div>
+            </div>
+            <button>查看私訊</button>
+            <div class="items">
+                <div><img id="u_pic" src="/image/modify.png"> </div>
+                <div class="items_n" onclick="edititem()">編輯項目</div>
+            </div>
+            <div class="items">
+                <div><img id="u_pic" src="/image/check.png"> </div>
+                <div class="items_n" onclick="edit_status('keep')">標記為已預定</div>
+            </div>
+            <div class="items">
+                <div><img id="u_pic" src="/image/transation.png"> </div>
+                <div class="items_n" onclick="edit_status('sale')">標記為售出</div>
+            </div>
+            <div class="items">
+                <div><img id="u_pic" src="/image/delete.png"> </div>
+                <div class="items_n d_color" onclick="edit_status('delete')">刪除</div>
+            </div>
+
+          </div>
+
+
+
+      </div>
+
+
+        <br>
+        <br>
+       
+
+       <div class="footer">
+              COPYRIGHT © 2021 PinckySell
+       </div>
+
+     
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal signin content -->
+            <div id="signin_content" class="signin_content">
+                <div style="display:flex;">
+                    <p class="cls_signin">登入會員帳號</p>
+                    <img class="close"  id="close" src="/image/icon_close.png" >
+                </div>
+                <input type="text" id="id_account" placeholder="輸入使用者名稱"><br><br>
+                <input type="password"  id="id_pwd" placeholder="輸入密碼"><br><br>
+                <button onclick="btn_signin()"  onkeypress="myFunction()">登入帳戶</button><br>
+                <label id="errmsg_login" class="error_msg"></label>
+                <p id="nosignin" onclick="signup()">還沒有帳戶？點此註冊</p>
+            </div>
+            <!-- Modal signup content -->   
+            <div id="signup_content" class="signup_content">
+                <div style="display:flex;">
+                    <p class="cls_signin">註冊會員帳號</p>
+                    <img class="close" id="signupclose" src="/image/icon_close.png" >
+                </div>
+                <input type="text" id="sign_account" placeholder="輸入使用者名稱"  required><br><br>
+                <input type="text" id="sign_name" placeholder="輸入姓名"  required><br><br>
+                <input type="text" id="sign_email" placeholder="輸入電子信箱"  required><br><br>
+                <input type="password" id="sign_pwd" placeholder="輸入密碼"  required><br><br>
+                <button onclick="btn_signup()">註冊新帳戶</button><br>
+                <label id="errmsg" class="error_msg"></label>
+                <p id="nosignup" onclick="haveAccount()">已經有帳戶了？點此登入</p>
+            </div>
+        </div>
+
+    </body>
+    
+    
+</html>

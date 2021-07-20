@@ -1,0 +1,175 @@
+<style>
+
+</style>
+    
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charest="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/profile.css" />
+    <link rel="stylesheet" type="text/css" href="/css/template.css" />
+    <title>旋轉拍賣</title>
+ 	<!-- indexJS -->
+     <script src="/js/template.js"></script>
+     <script src="/js/profile.js"></script>
+    </head>
+    <body>
+        <div class="hd">
+            <div class="hd0">
+                <div class="hd1">
+                    <img class="headimg" src="/image/camera.png" onclick="index()">
+                    <div class="menu">流行時尚</div>
+                    <div class="menu">美妝保養</div>
+                    <div class="menu">電子3C</div>
+                    <div class="menu">運動休閒</div>
+                </div>
+                <div>
+                    <div class="hd2_1">
+                        <div id="signup" class="menu" onclick="signup()">註冊</div>
+                        <div id="signin" class="menu" onclick="login()">登入</div>
+                    </div>
+                    <div  class="hd2_2">
+                        <div class="up"><img id="selfpic"></div>
+                        <div id="userid" class="menu" onclick="gotoself()"></div>
+                        <div id="logout" class="menu" onclick="logout()">登出</div>
+                    </div>
+          
+                </div>
+            </div>
+         </div>
+         <div class="srall">
+            <div class="sr">
+                <div class="sr1">
+                    <div class="goindex" onclick="goindex()">
+                        <img class="headimg_1" src="/image/cameraR.png"> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="logo">PinkySell</div>
+                    </div>
+                    <div class="sr_txt"><input type="text" id="t_search" placeholder="搜尋商品或用戶"></div>
+                    <img class="sr_pic" src="/image/search.png"> 
+                </div>
+                <div class="sr2">
+                    <button id="b_sale" onclick="gosell()">出售</button>
+                </div> 
+            </div>
+        </div>
+       
+        <div class="ct">
+            <div class="ct0">
+                <div class="item">
+                    <p onclick="m_profile()">編輯檔案</p>
+                    <p onclick="m_password()">更改密碼</p>
+                </div>
+                <div id="ct1" class="ct1">
+                    <div class="title">編輯檔案</div>
+                    <div class="t_ct1">個人檔案</div>
+                    <div>
+                        <div class="upcls">
+                            <img id="uppic"> 
+                        </div>
+                        <label class="lbl">
+                            <input type="file" name="file" id="file" name="myfile" style="display:none" accept=".png, .jpg, .jpeg" onchange="changepic()">
+                            上傳照片
+                        </label>
+                    </div>
+                    <div class="t_ct1">公開檔案</div>
+                    <div class="userdata">
+                        <form class="fm" id="form1">
+                            <input type="text" id="uname" placeholder="姓名" disabled required><br>
+                            <input type="text" id="email" placeholder="信箱" disabled><br>
+                            <textarea type="text" id="uintro" placeholder="個人簡介" style="width: 500px;height: 180px;"></textarea><br>
+                            <select name="city" id="mycity">
+                                    <option selected value="0">請選擇現居城市</option>
+                                    <option value="臺北市">臺北市</option>
+                                    <option value="新北市">新北市</option>
+                                    <option value="桃園市">桃園市</option>
+                                    <option value="臺中市">臺中市</option>
+                                    <option value="臺南市">臺南市</option>
+                                    <option value="高雄市">高雄市</option>
+                                    <option value="新竹縣">新竹縣</option>
+                                    <option value="苗栗縣">苗栗縣</option>
+                                    <option value="彰化縣">彰化縣</option>
+                                    <option value="南投縣">南投縣</option>
+                                    <option value="雲林縣">雲林縣</option>
+                                    <option value="嘉義縣">嘉義縣</option>
+                                    <option value="屏東縣">屏東縣</option>
+                                    <option value="宜蘭縣">宜蘭縣</option>
+                                    <option value="花蓮縣">花蓮縣</option>
+                                    <option value="臺東縣">臺東縣</option>
+                                    <option value="澎湖縣">澎湖縣</option>
+                                    <option value="金門縣">金門縣</option>
+                                    <option value="連江縣">連江縣</option>
+                                    <option value="基隆市">基隆市</option>
+                                    <option value="新竹市">新竹市</option>
+                                    <option value="嘉義市">嘉義市</option>
+                            </select>
+                            <br>
+                            <select name="gender" id="gender">
+                                <option selected value="0">請選擇性別</option>
+                                <option value="男">男</option>
+                                <option value="女" >女</option>
+                            </select>
+                           <input type="submit" id="submit1" value="save">
+                        </form>
+                    </div>
+                </div>
+                <div id="ct2" class="ct2">
+                    <div class="title">更改密碼</div>
+                    <div class="input">
+                        <form id="form2">
+                            <input type="password" id="oldpsw" placeholder="目前密碼"  required><br>
+                            <input type="password" id="newpsw" placeholder="新密碼"  required><br>
+                            <input type="password" id="chnewpsw" placeholder="確認新密碼"  required>
+                            <input type="submit" id="submit2" value="save">
+                        </form>
+                    </div>
+                
+       
+                </div>
+
+            </div>
+        </div>
+
+        <br>
+        <br>
+       
+
+       <div class="footer">
+              COPYRIGHT © 2021 PinckySell
+       </div>
+
+     
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal signin content -->
+            <div id="signin_content" class="signin_content">
+                <div style="display:flex;">
+                    <p class="cls_signin">登入會員帳號</p>
+                    <img class="close"  id="close" src="/image/icon_close.png" >
+                </div>
+                <input type="text" id="id_account" placeholder="輸入使用者名稱"><br><br>
+                <input type="password"  id="id_pwd" placeholder="輸入密碼"><br><br>
+                <button onclick="btn_signin()"  onkeypress="myFunction()">登入帳戶</button><br>
+                <label id="errmsg_login" class="error_msg"></label>
+                <p id="nosignin" onclick="signup()">還沒有帳戶？點此註冊</p>
+            </div>
+            <!-- Modal signup content -->   
+            <div id="signup_content" class="signup_content">
+                <div style="display:flex;">
+                    <p class="cls_signin">註冊會員帳號</p>
+                    <img class="close" id="signupclose" src="/image/icon_close.png" >
+                </div>
+                <input type="text" id="sign_account" placeholder="輸入使用者名稱"  required><br><br>
+                <input type="text" id="sign_name" placeholder="輸入姓名"  required><br><br>
+                <input type="text" id="sign_email" placeholder="輸入電子信箱"  required><br><br>
+                <input type="password" id="sign_pwd" placeholder="輸入密碼"  required><br><br>
+                <button onclick="btn_signup()">註冊新帳戶</button><br>
+                <label id="errmsg" class="error_msg"></label>
+                <p id="nosignup" onclick="haveAccount()">已經有帳戶了？點此登入</p>
+            </div>
+        </div>
+
+    </body>
+    
+    
+</html>

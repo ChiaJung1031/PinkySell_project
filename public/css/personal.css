@@ -1,0 +1,145 @@
+.pf{
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.bg{
+    margin-top: 100px;
+    width: 1200px;
+    height: 100px;
+}
+
+#pic{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.mypic{
+    border: 2px solid;
+    border-color: #5d16164d;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 140px;
+    margin-left: -97%;
+}
+
+#modify{
+    height: 50px;
+    margin-top: 270px;
+    width: 100px;
+    border: none;
+    color: #695454;
+    font-size: 18px;
+    border-radius: 13%;
+    margin-left: 820px;
+}
+
+.content{
+    display: flex;
+    margin-left: 13%;
+    margin-top: -85px;
+}
+
+/*左邊區塊*/
+.des{
+    padding-top: 10px;
+    width: 305px;
+    height: 500px;
+    margin-top: 125px;
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+}
+
+#u_name{
+    margin: 20px;
+    font-size: 25px;
+}
+
+#u_acc{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+#u_des{
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+#u_pos{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+/*商品列*/
+.pro{
+    width: 775px;
+    margin-top: 125px;
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+    margin-left: 50px;
+}
+
+.pds{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -70px;
+}
+
+.epd{
+    width: 200px;
+    height: 350px;
+    margin: 60px 26px 0 30px;;
+}
+
+.epd:hover{
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+}
+
+.eid img{
+    width: 40px;
+    height: 40px;
+}
+
+.pdimg{
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.account{
+    margin-top: 10px;
+}
+
+.pdn{
+    margin: 5px 0 0 20px;
+}
+
+.pro_t{
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#seemore{
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-family: monospace;
+    color: #ce8978;
+    background-color: #9090901f;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#seemore:hover{
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+}
+.btnsee{
+    text-align: center;
+}

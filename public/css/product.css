@@ -1,0 +1,209 @@
+p{
+    font-size: 16px;
+}
+.ctall{
+ width: 1200px;
+ margin: 0 auto;   
+ display: flex;
+ margin-top: 125px;
+}
+
+/*商品*/
+.pro{
+    margin-right: 30px;
+    width: 850px;
+    height: 1200px;
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+}
+
+.allpic{
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.status{
+    display: flex;
+    margin-left: 25px;
+}
+
+.status p{
+    font-size: 20px;
+    font-weight: bold;
+    color: #e8592a;
+    margin-top: 28px;
+}
+.status img{
+    width: 25px;
+    height: 25px;
+    margin-top: 30px;
+}
+#proname{
+    font-size: 30px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+}
+#price{
+    font-size: 30px;
+    margin-left: 25px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.pronew{
+    margin-left: 25px;
+    display: flex;
+}
+
+.pronew img{
+    width: 25px;
+    height: 25px;
+    margin-top: 16px;
+}
+#content{
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.pronew1{
+    
+    display: flex;
+}
+
+.pronew1 img{
+    width: 25px;
+    height: 25px;
+    margin-top: 16px;
+}
+
+
+#container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+   overflow: hidden;
+}
+
+#list {
+    position: absolute;
+    z-index: 1;
+    width: 10000px;
+    height: 400px;
+}
+#list img {
+    float: left;
+    width: 600px;
+    height: 400px;
+}
+
+.arrow {
+    position: absolute;
+    top: 180px;
+    z-index: 1;
+    display: none;
+    width: 40px;
+    height: 40px;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 39px;
+    text-align: center;
+    color: #fff;
+    background-color: RGBA(0, 0, 0, .3);
+    cursor: pointer;
+    display: block;
+    border-radius: 20px;
+}
+
+.arrow:hover {
+    background-color: RGBA(0, 0, 0, .7);
+}
+
+
+#prev {
+    left: 20px;
+}
+
+#next {
+    right: 20px;
+}
+
+
+
+
+
+
+/*私訊*/
+.buy{
+    width:  300px;
+    height: 300px;
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+}
+
+#selltxt{
+    width: 280px;
+    height: 100px;
+    margin: 11px;
+}
+
+.buy p , .sell p{
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.buy img, .sell img{
+    width: 30px;
+    height: 30px;
+    margin: 20px 5px 0 10px;
+}
+
+.buy button, .sell button{
+    border: none;
+    padding: 7px;
+    width: 280px;
+    margin-left: 10px;
+    color: white;
+    background-color: #da2609bf;
+}
+
+
+.eid{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.eid img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.account{
+    margin-top: 30px;
+    text-decoration:none
+}
+
+.items{
+    display: flex;
+}
+.items_n{
+    margin-top: 23px;
+}
+
+.sell{
+    width:  300px;
+    height: 320px;
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+}
+
+.titlename{
+    font-size: 20px;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.content_1{
+    margin-left: 5px;
+}
+.d_color{color: red;font-weight: bold;}
+
+.fontlocate{margin-top: 7px;}

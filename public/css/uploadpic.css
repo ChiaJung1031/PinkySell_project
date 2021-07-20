@@ -1,0 +1,172 @@
+#selltitle{
+    margin-top: 125px;
+    margin-left: 200px;
+    font-size: 25px;
+    font-family: monospace;
+}
+
+.cnt{
+    display: flex;
+    margin: -100px 0 0 200px;
+}
+
+/*上傳圖片*/
+.upload{
+    height: 600px;
+    margin-top: 125px;
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+    width: 340px;
+}
+
+.upct{
+    width: 300px;
+    height: 200px;
+    margin: 20px 0 0 20px;
+    background-color: #f598878c;
+}
+
+.lbl{
+    margin-left: 97px;
+    font-size: 20px;
+    background-color: #ff74747d;
+    padding: 10px;
+    border-radius: 10px;
+    color: #4e2015;
+    font-weight: bold;
+}
+
+.re{
+    margin-left: 95px;
+    color: #4e2015;
+}
+
+.show{
+    display: flex;
+    margin-left: 10px;
+    flex-wrap: wrap;
+}
+
+.showpic{
+    width: 100px;
+    background-color: #e0717145;
+    height: 110px;
+    margin-left: 5px;
+    margin-top: 15px;
+}
+
+.everypic{
+    width: 100px;
+    height: 110px;
+    object-fit: cover;
+}
+
+#save2{
+    background-color: #ff74747d;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #4e2015;
+}
+
+.delete{
+    width: 40px;
+    height: 40px;
+    margin-bottom: -14px;
+    margin-top: 5px;
+    padding-left: 75px;
+    margin-left: -21px;
+}
+
+/*商品資訊*/
+.product{
+    width: 700px;
+    margin-top: 125px;
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+    margin-left: 70px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.checkbox{
+    display: flex;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.t_info{
+    font-size: 25px;
+    font-weight: bold;
+    color: #4e2015;
+    margin-bottom: 20px;
+}
+
+.info input[type=text]{
+    width: 550px;
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+textarea{
+    width: 550px;
+    height: 130px;
+    margin-bottom: 20px;
+}
+
+.st_info{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+select{
+    width: 550px;
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+input[type=text]:focus , textarea:focus , select:focus {
+    border:5px solid;
+    border-color: rgb(233, 190, 173);
+  }
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+}
+
+.rbt{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+#delete3{
+    margin-top: -81px;
+}
+
+
+
+.dele{
+    font-size: 80px;
+    font-weight: bold;
+    opacity: 0;
+    margin-top: -102px;
+    text-align: center;
+}
+
+
+.dele:hover{
+    font-size: 80px;
+    font-weight: bold;
+    opacity: 1;
+    
+  }
+
+
+
+

@@ -1,0 +1,244 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.hd{
+    background-color: black;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 55;
+}
+
+.hd0{   
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.hd1{
+    display: flex;
+    margin-right: 54%;
+}
+
+.hd2_1{
+    display: flex;
+    margin-left: 35px;
+}
+
+.hd2_2{
+    display: flex;
+}
+
+#userid{display: none;}
+#logout{display: none;}
+
+.headimg{
+    width: 40px;
+    height: 40px;
+}
+
+.menu{
+    margin-top: 10px;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.goindex{
+    display: flex;
+}
+
+.sr_txt{
+    margin-left: 35px;
+}
+
+.sr{
+    display: flex;
+    margin: 0 auto;
+    width: 1200px;
+}
+.sr1{
+    display: flex;
+}
+
+#t_search{
+    height: 35px;
+    background-color: #80808042;
+    border: none;
+    width: 500px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.headimg_1{
+    width: 60px;
+    height: 60px;
+}
+
+#b_sale{
+    background-color: red;
+    border: none;
+    color: white;
+    height: 35px;
+    width: 60px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.sr_pic{
+    width: 25px;
+    height: 25px;
+    margin-top: 20px;
+    margin-left: -35px;
+}
+
+.sr2{
+    margin-left: 34%;
+}
+
+.srall{
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #80808057;
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    z-index: 55;
+    background-color: white;
+}
+
+.logo{
+    margin-top: 18px;
+    font-family: Impact;
+    font-size: 25px;
+    margin-left: -10px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0px;
+    background: #c1c1c14f;
+    margin-top: 70px;
+    padding: 50px;
+    font-size: 16px;
+    color: #b39f9f;
+    font-weight: bold;
+}
+
+/* The Modal background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 65; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black opacity */
+}
+
+/* Modal Content */
+.signin_content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 310px;
+    box-shadow: 0px 4px 60px #AAAAAA;
+    border-radius: 6px;
+}
+
+/* Modal Content */
+.signup_content {
+    display: none;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 310px;
+    box-shadow: 0px 4px 60px #AAAAAA;
+    border-radius: 6px;
+}
+
+.cls_signin{
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    display: flex;
+    margin: 0px 0 15px 25%;
+    color: #666666;
+    }
+
+    .signin_content > input,.signup_content > input{
+        height: 47px;
+        background: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        box-sizing: border-box;
+        border-radius: 5px;
+        width: 310px;
+    }
+    .signin_content > button ,.signup_content > button {
+        width: 310px;
+        height: 47px;
+        left: 0px;
+        top: 156px;
+        background: #d7e3e6;
+        border-radius: 5px;
+        color: #695454;
+        font-size: 19px;
+        cursor: pointer;
+        border: none;
+    }
+
+    /* The Close Button */
+.close {
+    width: 16px;
+    height: 16px;
+    margin: 0px 0 0 20%;
+}
+
+.close:hover,.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.error_msg{
+    display: none;   
+    text-align: center;
+    margin: 10px 0 -9px 0;
+    color: red;
+}
+
+#nosignin{margin-bottom: -5px;cursor: pointer;text-align: center;}
+#nosignup{margin-bottom: -5px;cursor: pointer;text-align: center;}
+#errmsg{display: none;}
+/* The Modal end) */
+
+
+#selfpic{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.up{
+    border-color: #5d16164d;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-top: 8px;
+    margin-left: -60px;
+}
