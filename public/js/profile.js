@@ -102,8 +102,14 @@ function myprofile(){
             if(val["data"]["gender"] == ""){
                 document.getElementById("gender").value="0";
             }
+            else{
+                document.getElementById("gender").value=val["data"]["gender"];
+            }
             if(val["data"]["city"] == ""){
                 document.getElementById("mycity").value="0";
+            }
+            else{
+                document.getElementById("mycity").value=val["data"]["city"];
             }
             document.getElementById("uppic").setAttribute("src",val["data"]["photo"]);
         }

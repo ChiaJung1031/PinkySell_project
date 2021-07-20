@@ -121,7 +121,7 @@ exports.change_psw = function(req)
             }
             else if(results.affectedRows == 1)
             {
-                msg = {'error':null};
+                msg = {'error':null,'userid':req["userid"]};
                resolve(JSON.stringify(msg))
             }
 
@@ -147,7 +147,7 @@ exports.change_self = function(req)
                 }
                 else if(results.affectedRows == 1)
                 {
-                    msg = {'error':null};
+                    msg = {'error':null,'userid':req["userid"]};
                    resolve(JSON.stringify(msg))
                 }
     
@@ -169,7 +169,7 @@ exports.get_profile = function(req)
     return new Promise(function(resolve,reject)
     { 
             let msg="";
-            let select_sql= "select A.email,A.name,B.introduce,B.city,B.gender,B.photo from apunsell.tb_user AS A left join apunsell.tb_profile AS b  on A.user_id = B.user_id where A.user_id='"+req["id"]+"'";
+            let select_sql= "select A.email,A.name,B.introduce,B.city,B.gender,B.photo from apunsell.tb_user AS A left join apunsell.tb_profile AS B  on A.user_id = B.user_id where A.user_id='"+req["id"]+"'";
             conn.query(select_sql, function(err, results, fields)
             {   
                 if (err) 
