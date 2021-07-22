@@ -11,7 +11,9 @@ const conn = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "12345",
-    database:"apunsell"
+    database:"apunsell",
+    waitForConnections: true,
+    connectionLimit: 10,
 });
 
 //註冊會員
@@ -225,6 +227,7 @@ exports.get_personal = function(req)
                     for(let i=0;i<results.length;i++)
                     {
                         msg = {
+                            "loginID":req["loginID"],
                             "userid":results[i]["user_id"],
                             "name":results[i]["u_name"],
                             "intro":results[i]["introduce"],
@@ -571,6 +574,46 @@ exports.get_uploadpro = function(req)
                            }
                            
                        }
+                    resolve(JSON.stringify(msg))
+                }
+            });
+           
+    });
+}
+
+//抓分類的商品
+exports.get_category = function(req)
+{
+    return new Promise(function(resolve,reject)
+    { 
+        let category = req["cat"];
+        let select_product ="select A.id,A.name,A.price,A.photo,B.code_name_1 from apunsell.tb_product as A left join apunsell.list_code as B on A.cat_sub_id=B.code_sub_id_2 and B.code_sub_id_1='"+category+"' where   B.code_sub_id_1='"+category+"' order by A.cre_datetime desc";
+        let msg="";
+        conn.query(select_product, function(err, results, fields)
+            { 
+                if (err) 
+                { 
+                    msg={'error': true,'errmsg':err};
+                    reject(JSON.stringify(msg))
+                }
+                else if(results.length != 0 )
+                { 
+                    let allmsg=[];
+                    for(let i=0;i<results.length;i++)
+                    {
+                        msg = {
+                            "pro_id":results[i]["id"],
+                            "name":results[i]["name"],
+                            "price":results[i]["price"],
+                            "photo":results[i]["photo"],
+                            "catname":results[i]["code_name_1"]
+                           }
+                       allmsg.push(msg);
+                    }
+                    resolve(JSON.stringify(allmsg))
+                }
+                else if(results.length == 0){
+                    let msg ={"error":"nodata"};
                     resolve(JSON.stringify(msg))
                 }
             });

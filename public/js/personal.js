@@ -7,7 +7,7 @@ window.onload = function(){
 var allcount="";
 var allfiles=[];
 function  load_data(){
-    let personalID=location.href.split('/personal/')[1]; //取得商品ID
+    let personalID=location.href.split('/personal/')[1]; //取得人員ID
     fetch("/api/personal/"+personalID,{
         method:"get"
     }).then((response)=>{
@@ -33,6 +33,10 @@ function  load_data(){
             document.getElementById("u_des").innerHTML= "簡介："+　data[0]["intro"];
             document.getElementById("u_pos").innerHTML= "居住地："+　data[0]["city"];
           
+            if(data[0]["loginID"] != data[0]["userid"]){
+                document.getElementById("modify").style.display="none";
+            }
+            
            for(let i=0;i<6;i++)
            {
                 let allitem = document.getElementById("allitem");

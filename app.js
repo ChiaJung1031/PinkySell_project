@@ -32,6 +32,8 @@ const upload = require('./apis/api_upload');
 app.use('/api',upload);
 const index = require('./apis/api_index');
 app.use('/api',index);
+const category = require('./apis/api_category');
+app.use('/api',category);
 
 app.get('/', function(req, res){
     res.render('index');
@@ -49,8 +51,6 @@ app.get('/profile/:id', function(req, res){
     res.render('profile');
 });
 
-
-
 app.get('/message', function(req, res){
     res.render('message');
 });
@@ -61,6 +61,9 @@ app.get('/product/:id', function(req, res){
 
 app.get('/uploadpic/:id', function(req, res){
     res.render('uploadpic');
+});
+app.get('/category/:id', function(req, res){
+    res.render('category');
 });
 
 

@@ -16,12 +16,11 @@ app.use(session({
 const router = express.Router();
 
 //載入個人資料
-router.get('/personal/:id',async function(req,res){
+router.get('/category/:cat',async function(req,res){
     try
     { 
-        let loginID=req.session.userid;
-        let info = {"id": req.params.id,"loginID":loginID};
-        let result = await db.get_personal(info);
+        let info = {"cat": req.params.cat};
+        let result = await db.get_category(info);
         result = await JSON.parse(result);
         res.end(JSON.stringify(result)) 
        

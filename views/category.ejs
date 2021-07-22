@@ -7,11 +7,12 @@
     <head>
     <meta charest="utf-8" />
     <link rel="stylesheet" type="text/css" href="/css/template.css" />
-    <link rel="stylesheet" type="text/css" href="/css/personal.css" />
+    <link rel="stylesheet" type="text/css" href="/css/category.css" />
     <title>旋轉拍賣</title>
  	<!-- indexJS -->
      <script src="/js/template.js"></script>
-     <script src="/js/personal.js"></script>
+     <script src="/js/category.js"></script>
+   
     </head>
     <body>
         <div class="hd">
@@ -53,22 +54,13 @@
             </div>
         </div>
         <div class="pf">
-            <img class="bg" src="/image/bg.jpg"> 
-            <br>
-            <div class="mypic">
-                <img id="pic"> 
-            </div>
-            <button id="modify" onclick="modifyfile()">編輯檔案</button>
+          <!-- 類別名稱 -->
+           <div id="cat_name"></div>
         </div>
         <div class="content">
-            <div class="des">
-                <div id="u_acc"></div>
-                <div id="u_name"></div>
-                <div id="u_des"> </div>
-                <div id="u_pos"></div>
-            </div>
             <div class="pro">
-                <div id="itemtitle" class="pro_t">商品</div>
+                <div id="itemtitle" class="pro_t">精選商品</div>
+                <div id="noitem" style="display: none;"></div>
                 <div id="allitem" class="pds">
                    
                 </div>

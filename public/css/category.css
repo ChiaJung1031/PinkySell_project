@@ -1,0 +1,95 @@
+.pf{
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+
+.content{
+    display: flex;
+    margin-left: 7%;
+    margin-top: 50px;
+}
+
+#cat_name{
+    margin-top: 120px;
+    font-size: 30px;
+    color: #e21515e6;
+    font-weight: bold;
+}
+
+
+/*商品列*/
+.pro{
+    width: 1200px;
+    margin-top: -25px;
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+    margin-left: 50px;
+}
+
+.pds{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -70px;
+}
+
+#noitem{
+    font-size: 30px;
+    margin-bottom: 204px;
+    margin-left: 41%;
+}
+
+.epd{
+    width: 200px;
+    height: 350px;
+    margin: 60px 26px 0 30px;;
+}
+
+.epd:hover{
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+}
+
+.eid img{
+    width: 40px;
+    height: 40px;
+}
+
+.pdimg{
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.account{
+    margin-top: 10px;
+}
+
+.pdn{
+    margin: 5px 0 0 20px;
+}
+
+.pro_t{
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#seemore{
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-family: monospace;
+    color: #ce8978;
+    background-color: #9090901f;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#seemore:hover{
+    box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+}
+.btnsee{
+    text-align: center;
+}
