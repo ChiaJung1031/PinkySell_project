@@ -35,6 +35,7 @@ function  load_data(){
           
             if(data[0]["loginID"] != data[0]["userid"]){
                 document.getElementById("modify").style.display="none";
+                document.getElementById("itemlist").style.display="none";
             }
             
            for(let i=0;i<6;i++)

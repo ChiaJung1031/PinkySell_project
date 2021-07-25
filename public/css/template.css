@@ -17,6 +17,7 @@ html, body{
     display: flex;
     width: 1200px;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 .hd1{
@@ -26,7 +27,6 @@ html, body{
 
 .hd2_1{
     display: flex;
-    margin-left: 35px;
 }
 
 .hd2_2{
@@ -59,6 +59,7 @@ html, body{
     display: flex;
     margin: 0 auto;
     width: 1200px;
+    cursor: pointer;
 }
 .sr1{
     display: flex;
@@ -88,6 +89,7 @@ html, body{
     font-size: 15px;
     font-weight: bold;
     margin-top: 12px;
+    cursor: pointer;
 }
 
 .sr_pic{
@@ -99,6 +101,7 @@ html, body{
 
 .sr2{
     margin-left: 34%;
+    cursor: pointer;
 }
 
 .srall{

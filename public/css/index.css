@@ -127,6 +127,7 @@
     color: #ce8978;
     background-color: #9090901f;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #seemore:hover{
@@ -162,4 +163,5 @@
 .pdn{
     margin: 5px 0 0 20px;
 }
+
 

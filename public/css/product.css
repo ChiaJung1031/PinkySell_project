@@ -164,6 +164,8 @@ p{
     margin-left: 10px;
     color: white;
     background-color: #da2609bf;
+    cursor: pointer;
+
 }
 
 
@@ -184,9 +186,11 @@ p{
 
 .items{
     display: flex;
+  
 }
 .items_n{
     margin-top: 23px;
+    cursor: pointer;
 }
 
 .sell{

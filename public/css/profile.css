@@ -12,6 +12,7 @@
 .item{
     width: 200px;
     margin-top: 125px;
+    cursor: pointer;
 }
 
 .item p{
@@ -34,6 +35,7 @@
     height: 1120px;
     margin-top: 125px;
     box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
+   
 }
 
 .t_ct1{
@@ -41,6 +43,11 @@
     font-family: Impact;
     font-weight: bold;
     margin: 55px 0 -30px 30px;
+  
+}
+
+#submit1,#submit2{
+    cursor: pointer;
 }
 
 #uppic{
@@ -73,7 +80,9 @@
     position: absolute;
     top: 330px;
     left: 870px;
+    cursor: pointer;
 }
+
 
 .fm{
     margin-left: 30px;
@@ -117,6 +126,7 @@ input[type=submit]{
     font-weight: bold;
     font-size: 30px;
     margin: 25px 0 -30px 30px;
+    cursor: pointer;
 }
 
 .input input{
