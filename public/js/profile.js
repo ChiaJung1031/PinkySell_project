@@ -15,7 +15,7 @@ window.onload = function(){
         else{
             if(userphoto == nopic){
                 files = undefined;
-                picture="";
+                picture=nopic;
             }
             else{
                 files = undefined;

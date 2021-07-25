@@ -27,7 +27,7 @@ function  load_data(){
         {
             allcount=data.length;
             allfiles=data;
-            document.getElementById("pic").setAttribute("src",data[0]["selfphoto"]);
+            document.getElementById("pic").setAttribute("src",data[0]["selfphoto"]);//有錯
             document.getElementById("u_acc").innerHTML= "帳號：@" + data[0]["userid"];
             document.getElementById("u_name").innerHTML= "姓名："+　data[0]["name"];
             document.getElementById("u_des").innerHTML= "簡介："+　data[0]["intro"];

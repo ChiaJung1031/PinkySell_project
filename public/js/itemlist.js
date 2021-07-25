@@ -93,7 +93,7 @@ function saledata(){
             }
         }
         else{
-            let ct1 = document.getElementById("ct1");
+            let ct1 = document.getElementById("ct2");
             let div = document.createElement("div");
             div.className="nodata";
             let div_txt = document.createTextNode("無銷售紀錄");
