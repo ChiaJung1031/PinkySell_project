@@ -130,3 +130,7 @@ function seemore()
     }
     allnum=allnum-6;
 }
+
+function itemlist(){
+    window.location.href="/itemlist/buy";
+}

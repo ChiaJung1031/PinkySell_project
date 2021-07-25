@@ -2,7 +2,8 @@ const express = require('express');
 const session=require('express-session')
 const querystring = require('querystring'); 
 const app = express();
-let engine = require('ejs-locals');
+const engine = require('ejs-locals');
+
 
 app.engine('ejs', engine);
 app.set('views', './views');
@@ -16,6 +17,8 @@ app.use(session({
     resave:false,
     saveUninitialized:true
 }))
+
+
 
 
 const user = require('./apis/api_user');
@@ -34,36 +37,37 @@ const index = require('./apis/api_index');
 app.use('/api',index);
 const category = require('./apis/api_category');
 app.use('/api',category);
+const itemlist = require('./apis/api_itemlist');
+app.use('/api',itemlist);
+
+
 
 app.get('/', function(req, res){
     res.render('index');
 });
-
 app.get('/sell', function(req, res){
     res.render('uploadpic');
 });
-
 app.get('/personal/:id', function(req, res){
     res.render('personal');
 });
-
 app.get('/profile/:id', function(req, res){
     res.render('profile');
 });
-
 app.get('/message', function(req, res){
     res.render('message');
 });
-
 app.get('/product/:id', function(req, res){
     res.render('product');
 });
-
 app.get('/uploadpic/:id', function(req, res){
     res.render('uploadpic');
 });
 app.get('/category/:id', function(req, res){
     res.render('category');
+});
+app.get('/itemlist/:id', function(req, res){
+    res.render('itemlist');
 });
 
 

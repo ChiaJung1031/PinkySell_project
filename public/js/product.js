@@ -154,4 +154,30 @@ function edititem(){
     window.location.href ="/uploadpic/"+productID;
 }
 
+function sendmsg(){
+    let productID=location.href.split('/product/')[1]; //取得商品ID
+    let seller = document.getElementById("acc1").textContent;
+    let sellerID = seller.substring(1,seller.length);
+    let memo = document.getElementById("selltxt").value;
+    let info={"memo":memo,"seller":sellerID}
+    fetch("/api/product/"+productID,{
+        method:"POST",
+        body: JSON.stringify(info),
+        headers: {
+            "Content-Type": "application/json"
+            }
+    }).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        if(data["error"]== true){
+          alert(data["msg"])          
+        }
+        else{
+            document.getElementById("selltxt").value=""; 
+            alert("已發信通知賣家！請等候賣家與您聯繫！")      
+             
+        }
+    })
+}
+
 

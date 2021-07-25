@@ -481,7 +481,7 @@ exports.modify_status = function(req)
                 }
                 else if(results.affectedRows ==1 )
                 { 
-                   msg = {"error":null,"OK":"商品保留成功！"}
+                   msg = {"error":null,"OK":"商品預定成功！"}
                    resolve(JSON.stringify(msg))
                 }
             });
@@ -587,7 +587,7 @@ exports.get_category = function(req)
     return new Promise(function(resolve,reject)
     { 
         let category = req["cat"];
-        let select_product ="select A.id,A.name,A.price,A.photo,B.code_name_1 from apunsell.tb_product as A left join apunsell.list_code as B on A.cat_sub_id=B.code_sub_id_2 and B.code_sub_id_1='"+category+"' where   B.code_sub_id_1='"+category+"' order by A.cre_datetime desc";
+        let select_product ="select A.id,A.name,A.price,A.photo,A.user_id,C.photo as selfphoto,B.code_name_1 from tb_product as A left join tb_profile as C on A.user_id = C.user_id left join list_code as B on A.cat_sub_id=B.code_sub_id_2 and B.code_sub_id_1='"+category+"' where   B.code_sub_id_1='"+category+"' order by A.cre_datetime desc";
         let msg="";
         conn.query(select_product, function(err, results, fields)
             { 
@@ -606,7 +606,9 @@ exports.get_category = function(req)
                             "name":results[i]["name"],
                             "price":results[i]["price"],
                             "photo":results[i]["photo"],
-                            "catname":results[i]["code_name_1"]
+                            "catname":results[i]["code_name_1"],
+                            "selfphoto":results[i]["selfphoto"],
+                            "userid":results[i]["user_id"]
                            }
                        allmsg.push(msg);
                     }
@@ -618,5 +620,155 @@ exports.get_category = function(req)
                 }
             });
            
+    });
+}
+
+//確定購買
+exports.buy_product= function(req)
+{
+    return new Promise(function(resolve,reject)
+    {                
+            let datetime=dateFormat(new Date(), "yyyy-mm-dd HH:MM:ss");
+            let msg="";
+            let insert_sql= "insert into tb_buy(pro_id,buyer_id,seller_id,cre_datetime) value(?,?,?,?)";
+            let insert_val = [req["proid"],req["buyer"],req["seller"],datetime];
+            conn.query(insert_sql,insert_val, function(err, results, fields)
+            {   
+                if (err) 
+                { 
+                    msg={'error': true,'errmsg':err};
+                    reject(JSON.stringify(msg))
+                }
+                else if(results.affectedRows == 1)
+                {      
+                    let insert1_sql= "insert into tb_message(pro_id,buyer_id,seller_id,msg,cre_datetime) value(?,?,?,?,?)"
+                    let insert1_val =  [req["proid"],req["buyer"],req["seller"],req["memo"],datetime];
+                    conn.query(insert1_sql,insert1_val, function(err, results, fields)
+                    {
+                        if (err) 
+                        { 
+                            msg={'error': true,'errmsg':err};
+                            reject(JSON.stringify(msg))
+                        }
+                        else if(results.affectedRows == 1)
+                        {
+                            msg = {'error':null};
+                            resolve(JSON.stringify(msg))
+                        }
+                    })
+                }
+    
+            });
+    
+      
+    });
+}
+
+//發信要的信箱資料
+exports.user_info = function(req)
+{
+    return new Promise(function(resolve,reject)
+    { 
+            let msg="";
+            let select_sql= "select A.user_id,email,B.name from tb_user as A left join tb_product as B on A.user_id=B.user_id and B.id='"+req["proid"]+"' where A.user_id in ('"+req["buyer"]+"','"+req["seller"]+"')";
+            conn.query(select_sql, function(err, results, fields)
+            {   
+                if (err) 
+                { 
+                    msg={'error': true,'errmsg':err};
+                    reject(JSON.stringify(msg))
+                }
+                else if(results.length != 0 )
+                { 
+                    let allmsg=[];
+                   for(let i=0;i<results.length;i++){
+                        msg = {
+                            "userid":results[i]["user_id"],
+                            "email":results[i]["email"],
+                            "proname":results[i]["name"]
+                         };
+                         allmsg.push(msg);
+                   }
+                  
+                    resolve(JSON.stringify(allmsg))
+                }
+    
+            });
+    });
+}
+
+//抓所有購買紀錄
+exports.get_buyitem = function(req)
+{
+    return new Promise(function(resolve,reject)
+    { 
+            let msg="";
+            let select_sql= "select B.name,B.price,A.cre_datetime,A.seller_id from tb_buy as A left join tb_product as B on A.pro_id=B.id where A.buyer_id='"+req["id"]+"' order by cre_datetime desc";
+            conn.query(select_sql, function(err, results, fields)
+            {   
+                if (err) 
+                { 
+                    msg={'error': true,'errmsg':err};
+                    reject(JSON.stringify(msg))
+                }
+                else if(results.length != 0 )
+                { 
+                    let allmsg=[];
+                   for(let i=0;i<results.length;i++){
+                        msg = {
+                            "seller_id":results[i]["seller_id"],
+                            "name":results[i]["name"],
+                            "price":results[i]["price"],
+                            "cre_datetime":results[i]["cre_datetime"]
+                         };
+                         allmsg.push(msg);
+                   }
+                  
+                    resolve(JSON.stringify(allmsg))
+                }
+                else if(results.length == 0 ){
+                    let msg = {"data":"nodata"}
+                    resolve(JSON.stringify(msg))
+                }
+    
+            });
+    });
+}
+
+//抓所有銷售劑鹿
+exports.get_saleitem = function(req)
+{
+    return new Promise(function(resolve,reject)
+    { 
+            let msg="";
+            let select_sql= "select B.name,B.price,A.cre_datetime,A.buyer_id from tb_buy as A left join tb_product as B on A.pro_id=B.id where A.seller_id='"+req["id"]+"' order by cre_datetime desc";
+            conn.query(select_sql, function(err, results, fields)
+            {   
+                if (err) 
+                { 
+                    msg={'error': true,'errmsg':err};
+                    reject(JSON.stringify(msg))
+                }
+                else if(results.length != 0 )
+                { 
+                    let allmsg=[];
+                   for(let i=0;i<results.length;i++){
+                        msg = {
+                            "buyer_id":results[i]["buyer_id"],
+                            "name":results[i]["name"],
+                            "price":results[i]["price"],
+                            "cre_datetime":results[i]["cre_datetime"]
+                         };
+                         allmsg.push(msg);
+                   }
+                  
+                    resolve(JSON.stringify(allmsg))
+                }
+                else if(results.length == 0 ){
+                    let msg = {"data":"nodata"}
+                    resolve(JSON.stringify(msg))
+                }
+    
+            });
     });
 }

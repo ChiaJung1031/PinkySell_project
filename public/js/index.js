@@ -39,8 +39,9 @@ function searchitem(){
         }).then((data)=>{
             if(data["data"] == "nodata")
             {
+                document.getElementById("t_search").value="";
                 alert("查無符合搜尋資料！")
-                load_data();
+         
             }
             else
             {
