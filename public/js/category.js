@@ -13,7 +13,7 @@ function load_data(){
     }).then((data)=>{
         if(data["error"] != "nodata"){
             let catname =  data[0]["catname"];
-            document.getElementById("cat_name").innerHTML=catname; //寫入類別名稱
+            document.getElementById("itemtitle").innerHTML=catname+"-精選商品"; //寫入類別名稱
             for(let i=0;i<10;i++)
             {
                  let allitem = document.getElementById("allitem");
@@ -27,10 +27,16 @@ function load_data(){
                  edipic.setAttribute("src",data[i]["selfphoto"]);
                  eid_1.appendChild(edipic);
         
-                 let eid_2 = document.createElement("div");
+              //   let eid_2 = document.createElement("div");
+                // eid_2.className="account";
+                // let userid_txt = document.createTextNode("@"+data[i]["userid"])
+                // eid_2.appendChild(userid_txt)
+
+                 let eid_2 = document.createElement("a");
                  eid_2.className="account";
-                 let userid_txt = document.createTextNode("@"+data[i]["userid"])
-                 eid_2.appendChild(userid_txt)
+                 eid_2.innerHTML="@"+data[i]["userid"];
+                 let a_userid = "/personal/"+ data[i]["userid"];
+                 eid_2.setAttribute("href",a_userid);
         
                  eid.appendChild(eid_1);
                  eid.appendChild(eid_2);

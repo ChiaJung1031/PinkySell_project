@@ -19,6 +19,9 @@ function checkuser(){
         else{
             let signin_content = document.getElementById("signin_content");
             signin_content.style.display = "block"
+            let addcss = document.getElementById("addcss");
+            addcss.style.marginLeft="35px";
+
         }
     }).catch((e) => {
         console.log(e)

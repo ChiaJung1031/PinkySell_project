@@ -72,13 +72,16 @@ function load_all_item(count,data){
              edipic.setAttribute("src",data[i]["selfphoto"]);
              eid_1.appendChild(edipic);
     
-             let eid_2 = document.createElement("div");
-             eid_2.className="account";
-             let userid_txt = document.createTextNode("@"+data[i]["userid"])
-             eid_2.appendChild(userid_txt)
+
+            let eid_2 = document.createElement("a");
+            eid_2.className="account";
+            eid_2.innerHTML="@"+data[i]["userid"];
+            let a_userid = "/personal/"+ data[i]["userid"];
+            eid_2.setAttribute("href",a_userid);
     
              eid.appendChild(eid_1);
              eid.appendChild(eid_2);
+
     
              let pic_a = document.createElement("a"); //加上圖片超聯結
              let a_href = "/product/"+ data[i]["pro_id"];
