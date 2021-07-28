@@ -1,25 +1,24 @@
 .content{
     display: flex;
-    width: 1200px;
     margin: 0 auto;
     margin-top: 125px;
 }
 
 #ct{
     position: relative;
-    width: 1200px;
     box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
 }
 
 #menulist{
-    height: 520px;
+  /*  height: 520px;*/
+    width: 200px;
 }
 
 #menulist img{
-    width: 150px;
-    height: 150px;
+    width: 35px;
+    height: 35px;
     float: left;
-    margin: 20px;
+    margin: -5px 5px 20px 18px;
 }
 
 .arrow {
@@ -56,12 +55,11 @@
 .wei-grids-wall {
     flex-direction: row;
     position: relative;
-    margin-top: 5vh;
 }
 
-.wei-grid{
-    display: flex;
-    flex-direction: column;
+.wei-grid a{
+  text-decoration: none;
+    color: black;
 }
 
 
@@ -80,33 +78,35 @@
 .ct_title{
     font-family: Impact;
     font-weight: bold;
-    font-size: 30px;
-    margin: 25px 0 -30px 25px;
+    font-size: 25px;
+    margin: 13px 0 -10px 22px;
 }
 
 .allpic{
-    display: flex; 
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
 }
 
 .fontstyle{
-    margin: 0 auto;
     font-family: cwTeXYen;
     font-weight: bold;
+    margin-top: 25px;
 }
 
 .pd{
     box-shadow: 0 3px 10px 0 rgb(44 44 45 / 7%), inset 0 0 0 1px rgb(44 44 45 / 7%);
-    width: 1200px;
+    width: 1170px;
     margin: 0 auto;
     padding-top: 10px;
+    margin-top: 125px;
+    margin-left: -55px;
 }
 
 .pds{
     display: flex;
     flex-wrap: wrap;
     margin-left: 30px;
-    margin-top: 50px;
 }
 
 .epd{
@@ -160,10 +160,15 @@
     font-size: 20px;
     margin-left: 8px;
     text-decoration: none;
+    color:black;
 }
 
 .pdn{
     margin: 5px 0 0 20px;
 }
 
-
+.txtcolor{
+    color: red;
+    margin: 5px 0 0 20px;
+    font-weight: bold;
+}

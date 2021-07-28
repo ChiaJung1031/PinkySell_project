@@ -30,10 +30,10 @@ router.get('/index',async function(req,res){
     }
 })
 
-router.patch('/index',async function(req,res){
+router.get('/index/:id',async function(req,res){
     try
     { 
-        let search = {"search":req.body["search"]};
+        let search = {"search":req.params.id};
         let result = await db.index_search(search);
         result = await JSON.parse(result);
         res.end(JSON.stringify(result)) 

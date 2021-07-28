@@ -27,10 +27,6 @@ function load_data(){
                  edipic.setAttribute("src",data[i]["selfphoto"]);
                  eid_1.appendChild(edipic);
         
-              //   let eid_2 = document.createElement("div");
-                // eid_2.className="account";
-                // let userid_txt = document.createTextNode("@"+data[i]["userid"])
-                // eid_2.appendChild(userid_txt)
 
                  let eid_2 = document.createElement("a");
                  eid_2.className="account";
@@ -64,7 +60,7 @@ function load_data(){
                  let pdprice = document.createElement("div");
                  let pdprice_txt = document.createTextNode("NT$"+data[i]["price"])
                  pdprice.appendChild(pdprice_txt);
-                 pdprice.className="pdn";
+                 pdprice.className="color";
 
                  epd.appendChild(eid);
                  epd.appendChild(pic_a);

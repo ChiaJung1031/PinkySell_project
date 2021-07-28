@@ -27,13 +27,8 @@ function searchitem(){
     }
     else (txt_search!="")
     {
-        let search_info = {"search": txt_search};
-        fetch("/api/index",{
-            method:"PATCH",   
-            body: JSON.stringify(search_info),
-            headers: {
-                "Content-Type": "application/json"
-                }
+        fetch("/api/index/"+txt_search,{
+            method:"GET"
         }).then((response)=>{
             return response.json();
         }).then((data)=>{
@@ -47,6 +42,7 @@ function searchitem(){
             {
                 let allitem = document.getElementById("allitem");
                 allitem.innerHTML="";
+                allfiles=data;
                 load_all_item(data.length,data);
             }
                
@@ -104,7 +100,7 @@ function load_all_item(count,data){
              let pdprice = document.createElement("div");
              let pdprice_txt = document.createTextNode("NT$"+data[i]["price"])
              pdprice.appendChild(pdprice_txt);
-             pdprice.className="pdn";
+             pdprice.className="txtcolor";
     
              epd.appendChild(eid);
              epd.appendChild(propicdiv);
@@ -166,7 +162,7 @@ function seemore(){
              let pdprice = document.createElement("div");
              let pdprice_txt = document.createTextNode("NT$"+allfiles[allnum]["price"])
              pdprice.appendChild(pdprice_txt);
-             pdprice.className="pdn";
+             pdprice.className="txtcolor";
     
              epd.appendChild(eid);
              epd.appendChild(propicdiv);

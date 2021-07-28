@@ -73,10 +73,16 @@
 .account{
     margin-top: 10px;
     text-decoration: none;
+    color: black
 }
 
 .pdn{
     margin: 5px 0 0 20px;
+}
+
+.color{
+    margin: 5px 0 0 20px;
+    color: red;
 }
 
 .pro_t{
