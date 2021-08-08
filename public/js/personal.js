@@ -21,7 +21,13 @@ function  load_data(){
             document.getElementById("u_acc").innerHTML= "帳號：@" + data[0]["userid"];
             document.getElementById("u_name").innerHTML= "姓名："+　data[0]["name"];
             document.getElementById("u_des").innerHTML= "簡介："+　data[0]["intro"];
-            document.getElementById("u_pos").innerHTML= "居住地："+　data[0]["city"];
+            if(data[0]["city"] == "0"){
+                document.getElementById("u_pos").innerHTML= "居住地：";
+            }
+            else{
+                document.getElementById("u_pos").innerHTML= "居住地："+　data[0]["city"];
+            }
+          
         }
         else if(data.length >= 1 && data[0]["pro_id"] !="")
         {
@@ -31,7 +37,12 @@ function  load_data(){
             document.getElementById("u_acc").innerHTML= "帳號：@" + data[0]["userid"];
             document.getElementById("u_name").innerHTML= "姓名："+　data[0]["name"];
             document.getElementById("u_des").innerHTML= "簡介："+　data[0]["intro"];
-            document.getElementById("u_pos").innerHTML= "居住地："+　data[0]["city"];
+            if(data[0]["city"] == "0"){
+                document.getElementById("u_pos").innerHTML= "居住地：";
+            }
+            else{
+                document.getElementById("u_pos").innerHTML= "居住地："+　data[0]["city"];
+            }
           
             if(data[0]["loginID"] != data[0]["userid"]){
                 document.getElementById("modify").style.display="none";
