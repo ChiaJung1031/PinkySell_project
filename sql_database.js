@@ -51,7 +51,7 @@ exports.singup_user = function(req)
                         else if(results.affectedRows == 1)
                         {
                             let insert1_sql = "insert into tb_profile(user_id,introduce,city,gender,photo) values (?,?,?,?,?)";
-                            let insert1_val = [req["userid"],"","","","https://d1wcop1hy1uawh.cloudfront.net/nopic.png"];
+                            let insert1_val = [req["userid"],"","","","https://d22d36kofi0dtl.cloudfront.net/nopic.png"];
                             conn.query(insert1_sql,insert1_val, function(err, results, fields)
                             {      
                                 if (err) 
